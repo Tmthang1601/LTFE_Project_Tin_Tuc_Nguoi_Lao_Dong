@@ -1,8 +1,13 @@
 import React from 'react'
+import Hero from "../components/Hero"
+import FetchData from "../components/FetchData";
 
-const Home = () => {
+function Home ()  {
   return (
-    <div>Home</div>
+    <div>
+        <Hero/>
+        <FetchData/>
+    </div>
   )
 }
 
