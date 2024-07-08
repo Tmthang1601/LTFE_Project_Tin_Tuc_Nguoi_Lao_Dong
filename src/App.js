@@ -2,8 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import {  BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
-import Hero from "./components/Hero";
-import FetchData from "./components/FetchData";
+
 import Categories from "./Pages/Categories";
 
 
@@ -12,8 +11,6 @@ const App = () => {
     <>
     <Router>
       <Navbar/>
-      <Hero/>
-      <FetchData/>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/general" element={<Categories cat="general"/>}/>
