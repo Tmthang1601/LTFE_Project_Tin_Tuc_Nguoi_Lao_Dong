@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
-const FetchData = () => {
+const FetchData = ({cat}) => {
     const [Data, setData] = useState("");
     const fetchData = async () => {
         await axios
             .get(
+                cat ? `https://newsapi.org/v2/top-headlines?country=us&category=${cat}&apiKey=f35783780331498f92aabe60e6a573c6` :
             "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f35783780331498f92aabe60e6a573c6"
             )
             .then((res) => setData(res.data.articles));
@@ -13,7 +14,7 @@ const FetchData = () => {
     };
     useEffect(() => {
         fetchData();
-    }, []);
+    }, [cat]);
     return (
         <div className="container my-4">
             <h3>

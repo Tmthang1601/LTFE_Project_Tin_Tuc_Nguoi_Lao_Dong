@@ -35,13 +35,13 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link active text-white" aria-current="page" to="Healthy">
-                        Healthy
+                    <Link className="nav-link active text-white" aria-current="page" to="Health">
+                        Health
                     </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link active text-white" aria-current="page" to="Techonology">
-                        Techonology
+                    <Link className="nav-link active text-white" aria-current="page" to="Technology">
+                        Technology
                     </Link>
                 </li>
             </ul>
