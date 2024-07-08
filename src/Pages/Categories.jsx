@@ -4,10 +4,9 @@ import FetchData from "../components/FetchData";
 
 function Categories ({cat})  {
     return (
-        <div>
+        <div stye={{minHeight: "100vh"}}>
             {cat}
-            <Hero/>
-            <FetchData/>
+
         </div>
     )
 }

@@ -4,6 +4,7 @@ import {  BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 
 import Categories from "./Pages/Categories";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -12,16 +13,15 @@ const App = () => {
     <Router>
       <Navbar/>
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/home" element={<Home/>}/>
         <Route path="/general" element={<Categories cat="general"/>}/>
         <Route path="/business" element={<Categories cat="business"/>}/>
         <Route path="/entertainment" element={<Categories cat="entertainment"/>}/>
-        <Route path="/health" element={<Categories cat="health"/>}/>
+        <Route path="/healthy" element={<Categories cat="healthy"/>}/>
         <Route path="/science" element={<Categories cat="science"/>}/>
-        <Route path="/technology" element={<Categories cat="technology"/>}/>
-
-
+        <Route path="/techonology" element={<Categories cat="techonology"/>}/>
       </Routes>
+      <Footer/>
     </Router>
       
     </>
