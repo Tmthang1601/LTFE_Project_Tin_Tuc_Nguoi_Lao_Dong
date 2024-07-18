@@ -1,12 +1,10 @@
 import React from 'react'
-import Hero from "../components/Hero";
-import FetchData from "../components/FetchData";
+import RssFeed from "../components/RssFeed";
 
 function Categories ({cat})  {
     return (
-        <div stye={{minHeight: "100vh"}}>
-            {cat}
-
+        <div style={{minHeight: "100vh"}}>
+            <RssFeed category={cat} />
         </div>
     )
 }
