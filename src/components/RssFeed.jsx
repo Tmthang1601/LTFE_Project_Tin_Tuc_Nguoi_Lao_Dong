@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ArticleChart from './ArticleChart';
-
 const RssFeed = ({ category }) => {
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([]);
@@ -10,6 +9,7 @@ const RssFeed = ({ category }) => {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
+    const [showStats, setShowStats] = useState(false);
     const location = useLocation();
     const itemsPerPage = 5;
 
@@ -92,8 +92,6 @@ const RssFeed = ({ category }) => {
                 break;
         }
 
-
-
         const filtered = sorted.filter(item =>
             item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             item.description.toLowerCase().includes(searchTerm.toLowerCase())
@@ -166,25 +164,60 @@ const RssFeed = ({ category }) => {
         <div className="container my-4">
             <h3><u>TIN NỔI BẬT - {category.toUpperCase()}</u></h3>
 
-            <div className="mb-4">
-                <h4>Thống kê bài viết</h4>
-                <ArticleChart data={data} />
-            </div>
+            <div style={{ maxWidth: '800px', margin: '0 auto', padding: '20px' }}>
+                <h3 style={{ marginBottom: '20px' }}><u>TIN NỔI BẬT - {category.toUpperCase()}</u></h3>
 
-            <div className="mb-3">
-                <input
-                    type="text"
-                    className="form-control mb-2"
-                    placeholder="Tìm kiếm bài viết..."
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
-                <select className="form-select" onChange={handleSortChange} value={sortOption}>
-                    <option value="newest">Mới nhất</option>
-                    <option value="oldest">Cũ nhất</option>
-                    <option value="popularity">Độ phổ biến</option>
-                    <option value="title">Tiêu đề</option>
-                </select>
+                <button
+                    style={{
+                        backgroundColor: '#007bff',
+                        color: 'white',
+                        border: 'none',
+                        padding: '10px 15px',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        marginBottom: '20px'
+                    }}
+                    onClick={() => setShowStats(!showStats)}
+                >
+                    {showStats ? 'Ẩn thống kê' : 'Hiển thị thống kê'}
+                </button>
+
+                {showStats && (
+                    <div style={{ marginBottom: '20px' }}>
+                        <h4>Thống kê bài viết</h4>
+                        <ArticleChart data={data} />
+                    </div>
+                )}
+
+                <div style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
+                    <input
+                        type="text"
+                        style={{
+                            flex: 2,
+                            padding: '10px',
+                            borderRadius: '5px',
+                            border: '1px solid #ced4da'
+                        }}
+                        placeholder="Tìm kiếm bài viết..."
+                        value={searchTerm}
+                        onChange={handleSearchChange}
+                    />
+                    <select
+                        style={{
+                            flex: 1,
+                            padding: '10px',
+                            borderRadius: '5px',
+                            border: '1px solid #ced4da'
+                        }}
+                        onChange={handleSortChange}
+                        value={sortOption}
+                    >
+                        <option value="newest">Mới nhất</option>
+                        <option value="oldest">Cũ nhất</option>
+                        <option value="popularity">Độ phổ biến</option>
+                        <option value="title">Tiêu đề</option>
+                    </select>
+                </div>
             </div>
             {filteredData.length === 0 ? (
                 <div className="alert alert-info">Không tìm thấy bài viết nào phù hợp.</div>
