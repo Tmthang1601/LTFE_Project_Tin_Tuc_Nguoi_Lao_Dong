@@ -51,10 +51,10 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/TheThao">Thể Thao</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/CongNghe">Công Nghệ</Link>
+                                <Link className="nav-link" to="/AI365">AI 365</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/DuLich">Du Lịch Xanh</Link>
+                            <Link className="nav-link" to="/DuLich">Du Lịch Xanh</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/PhuNu">Phụ Nữ</Link>
