@@ -26,7 +26,7 @@ const App = () => {
             <Route path="/VanHoa" element={<RssFeed category="van-hoa" />} />
             <Route path="/GiaiTri" element={<RssFeed category="giai-tri" />} />
             <Route path="/TheThao" element={<RssFeed category="the-thao" />} />
-            <Route path="/CongNghe" element={<RssFeed category="cong-nghe" />} />
+              <Route path="/AI365" element={<RssFeed category="ai-365" />} />
             <Route path="/DuLich" element={<RssFeed category="du-lich" />} />
             <Route path="/PhuNu" element={<RssFeed category="phu-nu" />} />
             <Route path="/GiaDinh" element={<RssFeed category="gia-dinh" />} />

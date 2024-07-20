@@ -29,7 +29,7 @@ const RssFeed = ({ category }) => {
             'van-hoa': 'van-hoa-van-nghe',
             'giai-tri': 'giai-tri',
             'the-thao': 'the-thao',
-            'cong-nghe': 'cong-nghe',
+                'ai-365': 'ai-365',
             'du-lich': 'du-lich-xanh',
             'phu-nu': 'chuyen-trang-phu-nu',
             'gia-dinh': 'gia-dinh'
