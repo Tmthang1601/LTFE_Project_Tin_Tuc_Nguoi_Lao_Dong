@@ -106,7 +106,22 @@ const RssFeed = ({ category }) => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
-    if (loading) return <div>Loading...</div>;
+
+    if (loading) return (
+        <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            color: '#fff',
+            fontSize: '2rem',
+            fontWeight: 'bold',
+        }}>
+            Loading...
+        </div>
+    );
+
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
