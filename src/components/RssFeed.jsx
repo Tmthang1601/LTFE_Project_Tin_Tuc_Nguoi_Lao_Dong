@@ -257,13 +257,13 @@ const RssFeed = ({ category }) => {
             <div className="pagination d-flex justify-content-center">
                 {currentPage > 1 && (
                     <button onClick={() => paginate(currentPage - 1)} className="btn btn-outline-primary mx-1">
-                        Previous
+                        Lùi
                     </button>
                 )}
                 {renderPaginationButtons()}
                 {currentPage < totalPages && (
                     <button onClick={() => paginate(currentPage + 1)} className="btn btn-outline-primary mx-1">
-                        Next
+                        Tiếp
                     </button>
                 )}
             </div>
