@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function Footer() {
 
     const styles = {
@@ -15,8 +14,8 @@ function Footer() {
             fontSize: '1rem',
         },
     };
-
     return (
+
        <footer style={styles.footer}>
            <p style={styles.text}>
                © 2024 Báo Tin Tức Người Lao Động. All rights reserved.

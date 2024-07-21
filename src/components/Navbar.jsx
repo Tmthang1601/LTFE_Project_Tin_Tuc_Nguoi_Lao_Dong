@@ -7,9 +7,22 @@ const Navbar = () => {
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
                 <div className="container-fluid">
                     <Link className="navbar-brand" to="/Home">
-                        <h3>NLD News</h3>
+                        <h3 style={{
+                            color: '#C0C0C0',
+                            fontFamily: 'Arial, sans-serif',
+                            fontWeight: 'bold',
+                            fontSize: '24px',
+                            margin: '0',
+                            padding: '5px 10px',
+                            textAlign: 'center',
+                            display: 'inline-block'
+                        }}>
+                            Báo Người Lao Động
+                        </h3>
                     </Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
