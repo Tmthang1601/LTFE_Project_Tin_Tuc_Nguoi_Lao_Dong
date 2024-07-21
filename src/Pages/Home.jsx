@@ -1,15 +1,13 @@
 import React from 'react'
-import Hero from "../components/Hero"
-import FetchData from "../components/FetchData";
+import RssFeed from "../components/RssFeed";
 
 
 function Home ()  {
-  return (
-    <div>
-        <Hero/>
-        <FetchData/>
-    </div>
-  )
+    return (
+        <div>
+            <RssFeed category="home" />
+        </div>
+    )
 }
 
 export default Home

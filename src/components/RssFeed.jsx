@@ -106,6 +106,7 @@ const RssFeed = ({ category }) => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
+
     if (loading) return (
         <div style={{
             display: 'flex',
@@ -120,6 +121,7 @@ const RssFeed = ({ category }) => {
             Loading...
         </div>
     );
+
 
     const indexOfLastItem = currentPage * itemsPerPage;
     const indexOfFirstItem = indexOfLastItem - itemsPerPage;
