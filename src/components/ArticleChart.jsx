@@ -18,7 +18,7 @@ const ArticleChart = ({ data }) => {
 
     useEffect(() => {
         const articlesByDate = data.reduce((acc, article) => {
-            const date = new Date(article.pubDate).toLocaleDateString();
+            const date = new Date(article.pubDate).toISOString().split('T')[0]; // Use ISO date format
             acc[date] = (acc[date] || 0) + 1;
             return acc;
         }, {});
@@ -26,7 +26,10 @@ const ArticleChart = ({ data }) => {
         const sortedDates = Object.keys(articlesByDate).sort((a, b) => new Date(a) - new Date(b));
 
         setChartData({
-            labels: sortedDates,
+            labels: sortedDates.map(date => {
+                const [year, month, day] = date.split('-');
+                return `${day}/${month}/${year}`; // Format date as dd/mm/yyyy
+            }),
             datasets: [
                 {
                     label: 'Số lượng bài viết',
@@ -48,6 +51,24 @@ const ArticleChart = ({ data }) => {
                 text: 'Số lượng bài viết theo ngày',
             },
         },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Ngày'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Số lượng bài viết'
+                },
+                beginAtZero: true,
+                ticks: {
+                    precision: 0
+                }
+            }
+        }
     };
 
     return <Bar options={options} data={chartData} />;
