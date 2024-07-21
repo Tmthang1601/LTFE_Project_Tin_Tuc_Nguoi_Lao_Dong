@@ -106,7 +106,7 @@ const RssFeed = ({ category }) => {
         window.scrollTo(0, 0);
     }, [currentPage]);
 
-    // if (loading) return <div>Loading...</div>;
+
     if (loading) return (
         <div style={{
             display: 'flex',
@@ -117,6 +117,7 @@ const RssFeed = ({ category }) => {
             color: '#fff',
             fontSize: '2rem',
             fontWeight: 'bold',
+
             background: 'linear-gradient(90deg, #ccc, #fff, #ccc)',
             backgroundSize: '200% 100%',
             WebkitBackgroundClip: 'text',
@@ -126,6 +127,7 @@ const RssFeed = ({ category }) => {
             Loading...
         </div>
     );
+
 
     document.head.insertAdjacentHTML('beforeend', `<style>
 @keyframes shine {
